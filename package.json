@@ -1,0 +1,9 @@
+{
+  "name": "realword-vue",
+  "version": "0.0.0",
+  "description": "Vue.js implementation for Thinkster RealWorld",
+  "main": "index.js",
+  "repository": "https://github.com/mchandleraz/realworld-starter-kit.git",
+  "author": "Matt Chandler <mcaz689@gmail.com>",
+  "license": "MIT"
+}
