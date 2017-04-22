@@ -16,6 +16,14 @@
             v-bind:key="article.title">
           </post-preview>
         </div>
+        <div class="col-md-3">
+          <div class="sidebar">
+            <p>Popular Tags</p>
+            <tag-list
+              v-bind:tags="tags"
+            ></tag-list>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +33,9 @@
 /* eslint no-unused-vars: "off" */
 import CONSTANTS from '@/constants/Home.constants';
 import postsService from '@/services/postsService';
+import tagsService from '@/services/tagsService';
 import PostPreview from './PostPreview';
+import TagList from './TagList';
 
 export default {
   name: 'home',
@@ -35,15 +45,23 @@ export default {
         this.$set(this, 'articles', response.data.articles);
       }
     });
+
+    tagsService.get().then((response) => {
+      if (response.status === 200) {
+        this.$set(this, 'tags', response.data.tags);
+      }
+    });
   },
   data() {
     return {
       bannerMessage: CONSTANTS.BANNER_MESSAGE,
       articles: null,
+      tags: null,
     };
   },
   components: {
     PostPreview,
+    TagList,
   },
 };
 </script>
