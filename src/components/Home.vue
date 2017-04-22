@@ -1,16 +1,41 @@
 <template>
   <div class="home-page">
-    <h1>{{ msg }}</h1>
+    <div class="container page">
+      <div class="row">
+        <div class="col-md-9">
+          <post-preview
+            v-for="(article, index) in articles"
+            v-bind:article="article"
+            v-bind:index="index"
+            v-bind:key="article.title">
+          </post-preview>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+/* eslint no-unused-vars: "off" */
+import postsService from '@/services/postsService';
+import PostPreview from './PostPreview';
+
 export default {
   name: 'home',
+  created() {
+    postsService.get().then((response) => {
+      if (response.status === 200) {
+        this.$set(this, 'articles', response.data.articles);
+      }
+    });
+  },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      articles: null,
     };
+  },
+  components: {
+    PostPreview,
   },
 };
 </script>
