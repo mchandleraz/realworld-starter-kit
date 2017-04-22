@@ -1,5 +1,11 @@
 <template>
   <div class="home-page">
+    <div class="banner">
+      <div class="container">
+        <h1 class="logo-font">conduit</h1>
+        <p>{{bannerMessage}}</p>
+      </div>
+    </div>
     <div class="container page">
       <div class="row">
         <div class="col-md-9">
@@ -17,6 +23,7 @@
 
 <script>
 /* eslint no-unused-vars: "off" */
+import CONSTANTS from '@/constants/Home.constants';
 import postsService from '@/services/postsService';
 import PostPreview from './PostPreview';
 
@@ -31,6 +38,7 @@ export default {
   },
   data() {
     return {
+      bannerMessage: CONSTANTS.BANNER_MESSAGE,
       articles: null,
     };
   },
