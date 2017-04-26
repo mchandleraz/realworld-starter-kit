@@ -4,12 +4,13 @@ import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
-import App from './App';
-import router from './router';
 
 // Import the styles directly. (Or you could add them via script tags.)
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+import App from './App';
+import router from './router';
 
 Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
