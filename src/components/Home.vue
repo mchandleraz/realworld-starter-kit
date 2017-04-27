@@ -19,19 +19,19 @@
               </li>
             </ul>
           </div>
-          <post-preview
+          <real-world-post-preview
             v-for="(article, index) in articles"
             v-bind:article="article"
             v-bind:index="index"
             v-bind:key="article.title">
-          </post-preview>
+          </real-world-post-preview>
         </div>
         <div class="col-md-3">
           <div class="sidebar">
             <p>Popular Tags</p>
-            <tag-list
+            <real-world-tag-list
               v-bind:tags="tags"
-            ></tag-list>
+            ></real-world-tag-list>
           </div>
         </div>
       </div>
@@ -44,8 +44,8 @@
 import CONSTANTS from '@/constants/Home.constants';
 import postsService from '@/services/postsService';
 import tagsService from '@/services/tagsService';
-import PostPreview from './PostPreview';
-import TagList from './TagList';
+import RealWorldPostPreview from './PostPreview';
+import RealWorldTagList from './TagList';
 
 export default {
   name: 'home',
@@ -70,8 +70,8 @@ export default {
     };
   },
   components: {
-    PostPreview,
-    TagList,
+    RealWorldPostPreview,
+    RealWorldTagList,
   },
 };
 </script>

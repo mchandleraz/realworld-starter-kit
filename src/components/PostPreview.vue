@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'PostPreview',
+  name: 'RealWorldPostPreview',
   data() {
     return {};
   },

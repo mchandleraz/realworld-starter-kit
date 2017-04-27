@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'TagList',
+  name: 'RealWorldTagList',
   props: ['tags'],
 };
 </script>
