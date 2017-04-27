@@ -51,16 +51,25 @@ export default {
   name: 'home',
   created() {
     postsService.get().then((response) => {
-      if (response.status === 200) {
-        this.$set(this, 'articles', response.data.articles);
-      }
+      this.assignDataByKey(response.data, 'articles');
     });
 
     tagsService.get().then((response) => {
-      if (response.status === 200) {
-        this.$set(this, 'tags', response.data.tags);
-      }
+      this.assignDataByKey(response.data, 'tags');
     });
+  },
+  methods: {
+    assignDataByKey(data, key) {
+      if (typeof key !== 'string') {
+        throw new Error('Key Param must be a String.');
+      }
+
+      if (data[key] === undefined) {
+        throw new Error(`Can't find ${key} on data Object.`);
+      }
+
+      this.$set(this, key, data[key]);
+    },
   },
   data() {
     return {
@@ -78,21 +87,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
