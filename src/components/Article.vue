@@ -121,9 +121,35 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'article',
-  };
+import postsService from '@/services/postsService';
+
+export default {
+  name: 'article',
+  created() {
+    postsService.getArticle(this.slug).then((response) => {
+      this.assignDataByKey(response.data, 'article');
+    });
+  },
+  methods: {
+    assignDataByKey(data, key) {
+      if (typeof key !== 'string') {
+        throw new Error('Key Param must be a String.');
+      }
+
+      if (data[key] === undefined) {
+        throw new Error(`Can't find ${key} on data Object.`);
+      }
+
+      this.$set(this, key, data[key]);
+    },
+  },
+  data() {
+    return {
+      slug: this.$route.params.id,
+      article: null,
+    };
+  },
+};
 </script>
 <style scoped>
   
