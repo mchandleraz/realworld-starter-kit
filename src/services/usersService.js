@@ -8,13 +8,13 @@ export default {
     });
   },
   getUserArticles(username) {
-    return Vue.axios.get(`https://conduit.productionready.io/api/profiles/${username}?author=${username}`)
+    return Vue.axios.get(`https://conduit.productionready.io/api/articles/?author=${username}`)
     .catch((error) => {
       throw new Error(error);
     });
   },
   getUserFavorites(username) {
-    return Vue.axios.get(`https://conduit.productionready.io/api/profiles/${username}?favorited=${username}`)
+    return Vue.axios.get(`https://conduit.productionready.io/api/articles/?favorited=${username}`)
     .catch((error) => {
       throw new Error(error);
     });
