@@ -110,7 +110,7 @@ export default {
   },
   data() {
     return {
-      username: this.$route.params.id,
+      username: this.$route.params.username,
       profile: null,
     };
   },
