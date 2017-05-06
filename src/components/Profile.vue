@@ -86,9 +86,34 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'profile',
-  };
+import usersService from '@/services/usersService';
+
+export default {
+  name: 'profile',
+  created() {
+    usersService.getUser(this.username).then((response) => {
+      this.assignDataByKey(response.data, 'profile');
+    });
+  },
+  data() {
+    return {
+      username: this.$route.params.id,
+    };
+  },
+  methods: {
+    assignDataByKey(data, key) {
+      if (typeof key !== 'string') {
+        throw new Error('Key Param must be a String.');
+      }
+
+      if (data[key] === undefined) {
+        throw new Error(`Can't find ${key} on data Object.`);
+      }
+
+      this.$set(this, key, data[key]);
+    },
+  },
+};
 </script>
 <style scoped>
   
