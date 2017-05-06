@@ -95,11 +95,6 @@ export default {
       this.assignDataByKey(response.data, 'profile');
     });
   },
-  data() {
-    return {
-      username: this.$route.params.id,
-    };
-  },
   methods: {
     assignDataByKey(data, key) {
       if (typeof key !== 'string') {
@@ -112,6 +107,12 @@ export default {
 
       this.$set(this, key, data[key]);
     },
+  },
+  data() {
+    return {
+      username: this.$route.params.id,
+      profile: null,
+    };
   },
 };
 </script>
