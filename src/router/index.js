@@ -19,7 +19,7 @@ export default new Router({
     { path: '/editor', name: 'create-article', component: Editor },
     { path: '/editor/:id', name: 'edit-article', component: Editor },
     { path: '/articles/:id', name: 'article', component: Article },
-    { path: '/profile/:username', name: 'user', component: Profile },
+    { path: '/profiles/:username', name: 'user', component: Profile },
     { path: '/article/:username/favorites', name: 'favorites', component: Favorites },
   ],
 });
