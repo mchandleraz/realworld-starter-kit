@@ -94,6 +94,12 @@ export default {
     usersService.getUser(this.username).then((response) => {
       this.assignDataByKey(response.data, 'profile');
     });
+    usersService.getUserArticles(this.username).then((response) => {
+      this.assignDataByKey(response.data, 'articles');
+    });
+    usersService.getUserFavorites(this.username).then((response) => {
+      this.assignDataByKey(response.data, 'articles');
+    });
   },
   methods: {
     assignDataByKey(data, key) {
@@ -112,6 +118,7 @@ export default {
     return {
       username: this.$route.params.username,
       profile: null,
+      articles: null,
     };
   },
 };
