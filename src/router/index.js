@@ -20,6 +20,6 @@ export default new Router({
     { path: '/editor/:id', name: 'edit-article', component: Editor },
     { path: '/articles/:id', name: 'article', component: Article },
     { path: '/profiles/:username', name: 'user', component: Profile },
-    { path: '/article/:username/favorites', name: 'favorites', component: Favorites },
+    { path: '/profiles/:username/favorites', name: 'favorites', component: Favorites },
   ],
 });
