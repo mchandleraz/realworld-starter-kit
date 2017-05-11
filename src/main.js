@@ -11,6 +11,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 import App from './App';
 import router from './router';
+import store from './store';
 
 Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
@@ -23,4 +24,5 @@ new Vue({
   router,
   template: '<App/>',
   components: { App },
+  store,
 });
