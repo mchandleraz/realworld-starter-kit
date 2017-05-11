@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import moment from 'moment';
 
 export default {
   name: 'RealWorldPostPreview',
@@ -27,11 +26,6 @@ export default {
     return {};
   },
   props: ['article'],
-  filters: {
-    date(date) {
-      return moment(date).format('MMMM DD, YYYY');
-    },
-  },
 };
 </script>
 
