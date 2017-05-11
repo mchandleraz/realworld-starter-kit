@@ -41,42 +41,30 @@
 
 <script>
 /* eslint no-unused-vars: "off" */
+import { mapMutations } from 'vuex';
 import CONSTANTS from '@/constants/Home.constants';
-import postsService from '@/services/postsService';
-import tagsService from '@/services/tagsService';
 import RealWorldPostPreview from './PostPreview';
 import RealWorldTagList from './TagList';
+import { FETCH_ARTICLES, FETCH_TAGS } from '../store/actionTypes';
 
 export default {
   name: 'home',
-  created() {
-    postsService.get().then((response) => {
-      this.assignDataByKey(response.data, 'articles');
-    });
-
-    tagsService.get().then((response) => {
-      this.assignDataByKey(response.data, 'tags');
-    });
-  },
-  methods: {
-    assignDataByKey(data, key) {
-      if (typeof key !== 'string') {
-        throw new Error('Key Param must be a String.');
-      }
-
-      if (data[key] === undefined) {
-        throw new Error(`Can't find ${key} on data Object.`);
-      }
-
-      this.$set(this, key, data[key]);
-    },
+  beforeMount() {
+    this.$store.dispatch(FETCH_ARTICLES);
+    this.$store.dispatch(FETCH_TAGS);
   },
   data() {
     return {
       bannerMessage: CONSTANTS.BANNER_MESSAGE,
-      articles: null,
-      tags: null,
     };
+  },
+  computed: {
+    articles() {
+      return this.$store.state.home.articles;
+    },
+    tags() {
+      return this.$store.state.home.tags;
+    },
   },
   components: {
     RealWorldPostPreview,
