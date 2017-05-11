@@ -21,5 +21,6 @@ export default new Router({
     { path: '/article/:id', name: 'article', component: Article },
     { path: '/profile/:username', name: 'user', component: Profile },
     { path: '/article/:username/favorites', name: 'favorites', component: Favorites },
+    { path: '*', redirect: { name: 'home' } },
   ],
 });
