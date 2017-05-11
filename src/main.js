@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+import moment from 'moment';
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 
 // Import the styles directly. (Or you could add them via script tags.)
@@ -17,6 +18,8 @@ Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
+
+Vue.filter('date', date => moment(date).format('MMMM DD, YYYY'));
 
 /* eslint-disable no-new */
 new Vue({
