@@ -9,14 +9,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Sign up</a>
+          <router-link to="/register" class="nav-link" href="">Sign up</router-link>
+        </li>
+         <li class="nav-item">
+          <router-link to="/login" class="nav-link">Sign in</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Settings</a>
+          <router-link to="/settings" class="nav-link" href="">Settings</router-link>
         </li>
         <!-- Add "active" class when you're on that page" -->
         <li class="nav-item active">
-          <a class="nav-link" href="">Home</a>
+          <router-link to="/" class="nav-link" href="">Home</router-link>
         </li>
       </ul>
     </div>

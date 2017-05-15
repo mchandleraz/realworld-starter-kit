@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
 import Login from '@/components/Login';
+import Register from '@/components/Register';
 import Settings from '@/components/Settings';
 import Editor from '@/components/Editor';
 import Article from '@/components/Article';
@@ -14,7 +15,7 @@ export default new Router({
   routes: [
     { path: '/', name: 'home', component: Home },
     { path: '/login', name: 'login', component: Login },
-    { path: '/signup', name: 'register', component: Login },
+    { path: '/register', name: 'register', component: Register },
     { path: '/settings', name: 'settings', component: Settings },
     { path: '/editor', name: 'create-article', component: Editor },
     { path: '/editor/:id', name: 'edit-article', component: Editor },
