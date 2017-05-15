@@ -1,6 +1,6 @@
 <template>
-  <div class="post-preview">
-    <div class="post-meta">
+  <div class="article-preview">
+    <div class="article-meta">
       <a href="profile.html"><img v-bind:src="article.author.image" /></a>
       <div class="info">
         <a href="" class="author">{{article.author.username}}</a>
