@@ -47,30 +47,34 @@
 </template>
 
 <script>
-import usersService from '@/services/usersService';
 import RealWorldPostPreview from './PostPreview';
+import { GET_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../store/actionTypes';
 
 export default {
   data() {
     return {
       username: this.$route.params.username,
-      profile: null,
     };
   },
   name: 'RealWorldProfile',
+  beforeMount() {
+    this.$store.dispatch(GET_USER, { user: this.username });
+    this.$store.dispatch(FETCH_USER_ARTICLES, { user: this.username });
+    this.$store.dispatch(FETCH_USER_FAVORITES, { user: this.username });
+  },
   components: {
     RealWorldPostPreview,
   },
-  created() {
-    usersService.getUser(this.username).then((response) => {
-      this.assignDataByKey(response.data, 'profile');
-    });
-    usersService.getUserArticles(this.username).then((response) => {
-      this.assignDataByKey(response.data, 'articles');
-    });
-    usersService.getUserFavorites(this.username).then((response) => {
-      this.assignDataByKey(response.data, 'articles');
-    });
+  computed: {
+    profile() {
+      return this.$store.state.user.profile;
+    },
+    articles() {
+      return this.$store.state.user.articles;
+    },
+    favoriteArticles() {
+      return this.$store.state.user.favoriteArticles;
+    },
   },
 };
 </script>
