@@ -10,7 +10,7 @@ export const state = {
 
 export const actions = {
   [FETCH_ARTICLES]({ commit }) {
-    return PostsService.get()
+    return PostsService.listArticles()
       .then(({ data }) => {
         commit(SET_ARTICLES, data.articles);
       })
@@ -19,7 +19,7 @@ export const actions = {
       });
   },
   [FETCH_TAGS]({ commit }) {
-    return TagsService.get()
+    return TagsService.listTags()
       .then(({ data }) => {
         commit(SET_TAGS, data.tags);
       })

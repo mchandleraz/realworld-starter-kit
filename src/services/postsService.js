@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 export default {
-  list() {
+  listArticles() {
     return Vue.axios.get('https://conduit.productionready.io/api/articles')
       .catch((error) => {
         throw new Error(error);
