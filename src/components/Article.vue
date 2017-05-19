@@ -14,13 +14,10 @@
           </div>
           <button class="btn btn-sm btn-outline-secondary">
             <i class="ion-plus-round"></i>
-            &nbsp;
             Follow {{ article.author.username }} <span class="counter">(10)</span>
           </button>
-          &nbsp;&nbsp;
           <button class="btn btn-sm btn-outline-primary">
             <i class="ion-heart"></i>
-            &nbsp;
             Favorite Post <span class="counter">({{ article.favoritesCount }})</span>
           </button>
         </div>
@@ -69,7 +66,6 @@
               <a href="" class="comment-author">
                 <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
               </a>
-              &nbsp;
               <a href="" class="comment-author">Jacob Schmidt</a>
               <span class="date-posted">Dec 29th</span>
             </div>
