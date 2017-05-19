@@ -1,5 +1,5 @@
 import UsersService from '@/services/usersService';
-import { GET_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../actionTypes';
+import { FETCH_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../actionTypes';
 import { SET_USER, SET_USER_ARTICLES, SET_USER_FAVORITES } from '../mutationTypes';
 
 export const state = {
@@ -9,7 +9,7 @@ export const state = {
 };
 
 export const actions = {
-  [GET_USER]({ commit }, payload) {
+  [FETCH_USER]({ commit }, payload) {
     return UsersService.getUser(payload.user)
       .then(({ data }) => {
         commit(SET_USER, data.profile);

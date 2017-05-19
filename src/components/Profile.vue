@@ -48,7 +48,7 @@
 
 <script>
 import RealWorldPostPreview from './PostPreview';
-import { GET_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../store/actionTypes';
+import { FETCH_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../store/actionTypes';
 
 export default {
   data() {
@@ -58,7 +58,7 @@ export default {
   },
   name: 'RealWorldProfile',
   beforeMount() {
-    this.$store.dispatch(GET_USER, { user: this.username });
+    this.$store.dispatch(FETCH_USER, { user: this.username });
     this.$store.dispatch(FETCH_USER_ARTICLES, { user: this.username });
     this.$store.dispatch(FETCH_USER_FAVORITES, { user: this.username });
   },
