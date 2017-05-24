@@ -1,9 +1,9 @@
 <template>
   <div class="article-preview">
     <div class="article-meta">
-      <a href="profile.html"><img v-bind:src="article.author.image" /></a>
+      <router-link :to="{ name: 'user', params: { username: article.author.username }}"><img v-bind:src="article.author.image" /></router-link>
       <div class="info">
-        <a href="" class="author">{{article.author.username}}</a>
+        <router-link :to="{ name: 'user', params: { username: article.author.username }}" class="author">{{article.author.username}}</router-link>
         <span class="date">{{article.createdAt | date}}</span>
       </div>
       <button class="btn btn-outline-primary btn-sm pull-xs-right">

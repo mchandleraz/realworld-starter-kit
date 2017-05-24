@@ -19,9 +19,9 @@ export default new Router({
     { path: '/settings', name: 'settings', component: Settings },
     { path: '/editor', name: 'create-article', component: Editor },
     { path: '/editor/:id', name: 'edit-article', component: Editor },
-    { path: '/article/:id', name: 'article', component: Article },
-    { path: '/profile/:username', name: 'user', component: Profile },
-    { path: '/article/:username/favorites', name: 'favorites', component: Favorites },
+    { path: '/articles/:id', name: 'article', component: Article },
+    { path: '/profiles/:username', name: 'user', component: Profile },
+    { path: '/profiles/:username/favorites', name: 'favorites', component: Favorites },
     { path: '*', redirect: { name: 'home' } },
   ],
 });

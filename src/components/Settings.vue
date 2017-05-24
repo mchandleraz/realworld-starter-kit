@@ -29,9 +29,11 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'RealWorldSettings',
 };
 </script>
+<style scoped>
+  
+</style>

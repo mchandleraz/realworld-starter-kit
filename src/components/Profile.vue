@@ -1,18 +1,20 @@
 <template>
-  <div class="profile-page">
+	<div class="profile-page">
+
     <div class="user-info">
       <div class="container">
         <div class="row">
+
           <div class="col-xs-12 col-md-10 offset-md-1">
-            <img src="http://i.imgur.com/Qr71crq.jpg" class="user-img" />
-            <h4>Eric Simons</h4>
+            <img :src="profile.image" class="user-img" />
+            <h4>{{ profile.username }}</h4>
             <p>
-              Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda looks like Peeta from the Hunger Games
+              {{ profile.bio }}
             </p>
             <button class="btn btn-sm btn-outline-secondary action-btn">
               <i class="ion-plus-round"></i>
-              &nbsp; Follow Eric Simons
-              <span class="counter">(10)</span>
+              &nbsp;
+              Follow {{ profile.username }} 
             </button>
           </div>
 
@@ -46,11 +48,36 @@
 
 <script>
 import RealWorldPostPreview from './PostPreview';
+import { FETCH_USER, FETCH_USER_ARTICLES, FETCH_USER_FAVORITES } from '../store/actionTypes';
 
 export default {
+  data() {
+    return {
+      username: this.$route.params.username,
+    };
+  },
   name: 'RealWorldProfile',
+  beforeMount() {
+    this.$store.dispatch(FETCH_USER, { user: this.username });
+    this.$store.dispatch(FETCH_USER_ARTICLES, { user: this.username });
+    this.$store.dispatch(FETCH_USER_FAVORITES, { user: this.username });
+  },
   components: {
     RealWorldPostPreview,
   },
+  computed: {
+    profile() {
+      return this.$store.state.user.profile;
+    },
+    articles() {
+      return this.$store.state.user.articles;
+    },
+    favoriteArticles() {
+      return this.$store.state.user.favoriteArticles;
+    },
+  },
 };
 </script>
+<style scoped>
+  
+</style>
