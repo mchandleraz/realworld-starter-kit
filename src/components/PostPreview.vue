@@ -10,16 +10,16 @@
         <i class="ion-heart"></i> {{article.favoritesCount}}
       </button>
     </div>
-    <a href="" class="preview-link">
+    <router-link
+      :to="{name: 'article', params: {id: article.slug}}" class="preview-link">
       <h1>{{article.title}}</h1>
       <p>{{article.description}}</p>
       <span>Read more...</span>
-    </a>
+    </router-link>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'RealWorldPostPreview',
   data() {
@@ -30,5 +30,4 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

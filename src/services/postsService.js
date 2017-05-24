@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import ApiService from '@/services/apiService';
 
 export default {
   get() {
@@ -6,5 +7,8 @@ export default {
       .catch((error) => {
         throw new Error(error);
       });
+  },
+  single(slug) {
+    return ApiService.get('articles', slug);
   },
 };
