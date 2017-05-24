@@ -4,5 +4,5 @@ machine:
 
 dependencies:
   override:
-    - npm install --dev
+    - npm install --only=dev
 
