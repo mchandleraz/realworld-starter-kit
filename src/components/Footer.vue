@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer id="RealWorldFooter">
       <div class="container">
         <router-link :to="{ name: 'home' }" class="logo-font">conduit</router-link>
         <span class="attribution">
@@ -10,7 +10,7 @@
 </template>
 <script>
   export default {
-    name: 'RealWordlFooter',
+    name: 'RealWorldFooter',
   };
 </script>
 <style scoped>
