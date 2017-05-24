@@ -30,7 +30,7 @@ module.exports = function (config) {
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' },
-        {type:'json', subdir: '.'},
+        { type:'json', subdir: '.' },
       ]
     },
   });
