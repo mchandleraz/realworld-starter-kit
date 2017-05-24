@@ -1,0 +1,8 @@
+machine:
+  node:
+    version: 7.5.0
+
+dependencies:
+  override:
+    - npm install --dev
+
