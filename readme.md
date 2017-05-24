@@ -1,6 +1,5 @@
 # ![RealWorld Example App](logo.png)
 
-
 > ### Vue.js codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.
 
 
@@ -19,6 +18,9 @@ For more information on how to this works with other frontends/backends, head ov
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 # Getting started
+
+
+[![CircleCI](https://circleci.com/gh/mchandleraz/realworld-vue/tree/master.svg?style=svg)](https://circleci.com/gh/mchandleraz/realworld-vue/tree/master)
 
 
 ``` bash
