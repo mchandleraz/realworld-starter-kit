@@ -2,3 +2,23 @@ machine:
   node:
     version: 7.5.0
 
+dependencies:
+  post:
+    - wget https://saucelabs.com/downloads/sc-latest-linux.tar.gz
+    - tar -xzf sc-latest-linux.tar.gz
+
+test:
+  override:
+    - npm run unit
+    - cd sc-*-linux && ./bin/sc --user mchandlerazz --api-key $SAUCE_ACCESSKEY --readyfile ~/sauce_is_ready:
+        background: true
+    # Wait for tunnel to be ready
+    - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
+    - python -m hello.hello_app:
+        background: true
+    # Wait for app to be ready
+    - wget --retry-connrefused --no-check-certificate -T 30 http://localhost:5000
+    # Run selenium tests
+    - npm run e2e
+  post:
+    - killall --wait sc  # wait for Sauce Connect to close the tunnel
