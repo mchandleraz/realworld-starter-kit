@@ -7,7 +7,7 @@ const homeModuleInjector = require('inject-loader!@/store/modules/home');
 
 const expectedPayload = 'foo!';
 const homeModule = homeModuleInjector({
-  '@/services/postsService': {
+  '@/services/articleService': {
     get() {
       return Promise.resolve({
         data: {

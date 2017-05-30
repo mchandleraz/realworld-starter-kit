@@ -47,7 +47,7 @@ Alternatively, if you want to make modifications to the theme, check out the [th
   - [Settings](#settings)
   - [Create/Edit Article](#createedit-article)
   - [Article](#article)
-  
+
 
 ## Layout
 
@@ -135,8 +135,8 @@ Alternatively, if you want to make modifications to the theme, check out the [th
           </ul>
         </div>
 
-        <div class="post-preview">
-          <div class="post-meta">
+        <div class="article-preview">
+          <div class="article-meta">
             <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
             <div class="info">
               <a href="" class="author">Eric Simons</a>
@@ -153,8 +153,8 @@ Alternatively, if you want to make modifications to the theme, check out the [th
           </a>
         </div>
 
-        <div class="post-preview">
-          <div class="post-meta">
+        <div class="article-preview">
+          <div class="article-meta">
             <a href="profile.html"><img src="http://i.imgur.com/N4VcUeJ.jpg" /></a>
             <div class="info">
               <a href="" class="author">Albert Pai</a>
@@ -263,7 +263,7 @@ Alternatively, if you want to make modifications to the theme, check out the [th
     <div class="row">
 
       <div class="col-md-10 col-md-offset-1">
-        <div class="posts-toggle">
+        <div class="articles-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
               <a class="nav-link active" href="">My Posts</a>
@@ -274,8 +274,8 @@ Alternatively, if you want to make modifications to the theme, check out the [th
           </ul>
         </div>
 
-        <div class="post-preview">
-          <div class="post-meta">
+        <div class="article-preview">
+          <div class="article-meta">
             <a href=""><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
             <div class="info">
               <a href="" class="author">Eric Simons</a>
@@ -287,13 +287,13 @@ Alternatively, if you want to make modifications to the theme, check out the [th
           </div>
           <a href="" class="preview-link">
             <h1>How to build webapps that scale</h1>
-            <p>This is the description for the post.</p>
+            <p>This is the description for the article.</p>
             <span>Read more...</span>
           </a>
         </div>
 
-        <div class="post-preview">
-          <div class="post-meta">
+        <div class="article-preview">
+          <div class="article-meta">
             <a href=""><img src="http://i.imgur.com/N4VcUeJ.jpg" /></a>
             <div class="info">
               <a href="" class="author">Albert Pai</a>
@@ -396,14 +396,14 @@ Alternatively, if you want to make modifications to the theme, check out the [th
 ### Article
 
 ```html
-<div class="post-page">
+<div class="article-page">
 
   <div class="banner">
     <div class="container">
 
       <h1>How to build webapps that scale</h1>
 
-      <div class="post-meta">
+      <div class="article-meta">
         <a href=""><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
         <div class="info">
           <a href="" class="author">Eric Simons</a>
@@ -427,7 +427,7 @@ Alternatively, if you want to make modifications to the theme, check out the [th
 
   <div class="container page">
 
-    <div class="row post-content">
+    <div class="row article-content">
       <div class="col-md-12">
         <p>
         Web development technologies have evolved at an incredible clip over the past few years.
@@ -439,8 +439,8 @@ Alternatively, if you want to make modifications to the theme, check out the [th
 
     <hr />
 
-    <div class="post-actions">
-      <div class="post-meta">
+    <div class="article-actions">
+      <div class="article-meta">
         <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
         <div class="info">
           <a href="" class="author">Eric Simons</a>
