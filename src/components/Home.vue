@@ -19,12 +19,12 @@
               </li>
             </ul>
           </div>
-          <real-world-post-preview
+          <real-world-article-preview
             v-for="(article, index) in articles"
             v-bind:article="article"
             v-bind:index="index"
             v-bind:key="article.title">
-          </real-world-post-preview>
+          </real-world-article-preview>
         </div>
         <div class="col-md-3">
           <div class="sidebar">
@@ -43,7 +43,7 @@
 /* eslint no-unused-vars: "off" */
 import { mapMutations } from 'vuex';
 import CONSTANTS from '@/constants/Home.constants';
-import RealWorldPostPreview from './PostPreview';
+import RealWorldArticlePreview from './ArticlePreview';
 import RealWorldTagList from './TagList';
 import { FETCH_ARTICLES, FETCH_TAGS } from '../store/actionTypes';
 
@@ -67,7 +67,7 @@ export default {
     },
   },
   components: {
-    RealWorldPostPreview,
+    RealWorldArticlePreview,
     RealWorldTagList,
   },
 };

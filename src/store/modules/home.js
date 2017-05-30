@@ -1,4 +1,4 @@
-import PostsService from '@/services/postsService';
+import articleService from '@/services/articleService';
 import TagsService from '@/services/tagsService';
 import { FETCH_ARTICLES, FETCH_TAGS } from '../actionTypes';
 import { SET_ARTICLES, SET_TAGS } from '../mutationTypes';
@@ -10,7 +10,7 @@ export const state = {
 
 export const actions = {
   [FETCH_ARTICLES]({ commit }) {
-    return PostsService.get()
+    return articleService.get()
       .then(({ data }) => {
         commit(SET_ARTICLES, data.articles);
       })

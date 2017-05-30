@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-10 offset-md-1">
-          <div class="posts-toggle">
+          <div class="articles-toggle">
             <ul class="nav nav-pills outline-active">
               <li class="nav-item">
                 <a class="nav-link active" href="">My Posts</a>
@@ -32,12 +32,12 @@
               </li>
             </ul>
           </div>
-          <real-world-post-preview
+          <real-world-article-preview
             v-for="(article, index) in articles"
             v-bind:article="article"
             v-bind:index="index"
             v-bind:key="article.title">
-          </real-world-post-preview>
+          </real-world-article-preview>
         </div>
       </div>
     </div>
@@ -45,12 +45,12 @@
 </template>
 
 <script>
-import RealWorldPostPreview from './PostPreview';
+import RealWorldArticlePreview from './ArticlePreview';
 
 export default {
   name: 'RealWorldProfile',
   components: {
-    RealWorldPostPreview,
+    RealWorldArticlePreview,
   },
 };
 </script>

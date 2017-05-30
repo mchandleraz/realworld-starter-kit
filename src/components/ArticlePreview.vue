@@ -21,7 +21,7 @@
 <script>
 
 export default {
-  name: 'RealWorldPostPreview',
+  name: 'RealWorldArticlePreview',
   data() {
     return {};
   },
