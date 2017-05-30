@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { API_URL } from '@/constants/Home.constants';
+import API_URL from '@/constants';
 
 export default class ApiService {
 

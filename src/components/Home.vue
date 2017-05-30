@@ -42,7 +42,7 @@
 <script>
 /* eslint no-unused-vars: "off" */
 import { mapMutations } from 'vuex';
-import CONSTANTS from '@/constants/Home.constants';
+import CONSTANTS from '@/constants/home.constants';
 import RealWorldPostPreview from './PostPreview';
 import RealWorldTagList from './TagList';
 import { FETCH_ARTICLES, FETCH_TAGS } from '../store/actionTypes';
