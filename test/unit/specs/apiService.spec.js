@@ -14,10 +14,10 @@ describe.only('Api Service', () => {
     });
 
     it('fetches a resource with params', () => {
-      ApiService.get('articles', '')
+      const articleSlug = 'building-real-world-production-quality-apps-with-angular-2-1fipk2';
+      ApiService.get('articles', articleSlug)
         .then((res) => {
-          console.log(res)
-          expect(res.data.articles).to.be.a('array');
+          expect(res.data.articles).to.be.a('object');
         });
     });
   });

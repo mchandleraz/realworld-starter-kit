@@ -10,7 +10,7 @@ export default class ApiService {
     return Vue.axios
       .get(`${API_URL}/${resource}/${params}`)
       .catch((error) => {
-        throw new Error(error);
+        throw new Error(`[RWA] ApiService ${error}`);
       });
   }
 }
